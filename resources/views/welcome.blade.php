@@ -32,59 +32,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-
-    <script >
-        // Import the functions you need from the SDKs you need
-        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-
-// import 'firebase/database'; // If using Firebase database
-// import 'firebase/storage';  // If using Firebase storage
-//         var firebaseConfig = {
-//             apiKey: "AIzaSyD9mrFpr5WlcyI9Ougbaaln6IhVHvGZ71Y",
-//   authDomain: "smsalthawrah.firebaseapp.com",
-//   projectId: "smsalthawrah",
-//   storageBucket: "smsalthawrah.appspot.com",
-//   messagingSenderId: "568447726774",
-//   appId: "1:568447726774:web:4f232f449084322f0ce217"
-//         };
-//          // Your web app's Firebase configuration
-
-//         firebase.initializeApp(firebaseConfig);
-//     //    console.log(firebase.initializeApp(firebaseConfig));
-//     </script>
-     <script type="text/javascript">
-//         window.onload = function () {
-//             render();
-//         };
-//         function render() {
-//             window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-//             recaptchaVerifier.render();
-//         }
-//         function sendOTP() {
-//             var number = $("#number").val();
-//             firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
-//                 window.confirmationResult = confirmationResult;
-//                 coderesult = confirmationResult;
-//                 console.log(coderesult);
-//                 $("#successAuth").text("Message sent");
-//                 $("#successAuth").show();
-//             }).catch(function (error) {
-//                 $("#error").text(error.message);
-//                 $("#error").show();
-//             });
-//         }
-//         function verify() {
-//             var code = $("#verification").val();
-//             coderesult.confirm(code).then(function (result) {
-//                 var user = result.user;
-//                 console.log(user);
-//                 $("#successOtpAuth").text("Auth is successful");
-//                 $("#successOtpAuth").show();
-//             }).catch(function (error) {
-//                 $("#error").text(error.message);
-//                 $("#error").show();
-//             });
-//         }
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAeDSIXqtCvODdgTBWUVKdnfeAF_r3TzYE",
+    authDomain: "althawra-project.firebaseapp.com",
+    projectId: "althawra-project",
+    storageBucket: "althawra-project.appspot.com",
+    messagingSenderId: "324021295414",
+    appId: "1:324021295414:web:58bfa2020796dfcab1bb97",
+    measurementId: "G-6DMF56ZRNL"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            render();
+        };
+        function render() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+            recaptchaVerifier.render();
+        }
+        function sendOTP() {
+            var number = $("#number").val();
+            firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+                window.confirmationResult = confirmationResult;
+                coderesult = confirmationResult;
+                console.log(coderesult);
+                $("#successAuth").text("Message sent");
+                $("#successAuth").show();
+            }).catch(function (error) {
+                $("#error").text(error.message);
+                $("#error").show();
+            });
+        }
+        function verify() {
+            var code = $("#verification").val();
+            coderesult.confirm(code).then(function (result) {
+                var user = result.user;
+                console.log(user);
+                $("#successOtpAuth").text("Auth is successful");
+                $("#successOtpAuth").show();
+            }).catch(function (error) {
+                $("#error").text(error.message);
+                $("#error").show();
+            });
+        }
     </script>
 </body>
 
